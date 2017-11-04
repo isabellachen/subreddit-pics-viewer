@@ -6,10 +6,11 @@ import { applyMiddleware, createStore } from 'redux';
 import logger from 'redux-logger';
 import reducer from './reducers/reducer';
 
-import PostsList from './src/posts-list';
+import Dashboard from './src/dashboard';
 
 const store = createStore(
   reducer,
+  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(logger),
 );
 
@@ -21,7 +22,7 @@ class App extends React.Component {
           style={styles.container}
           initialRoute={{
             title: 'Latest Reddit Pics',
-            component: PostsList,
+            component: Dashboard,
           }}/>
       </Provider>
     );
